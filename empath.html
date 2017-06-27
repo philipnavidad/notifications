@@ -18,15 +18,13 @@
 	    		geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.3 0.001"
 			material="transparent: true; src: #ok-button"
 			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
-		<a-mixin id="mouseenter-button"
-			wire__enter="on: mouseenter; emit: over; target: #ok"></a-mixin>
-		<a-mixin id="mouseleave-button"
-			wire__leave="on: mouseleave; emit: leave; target: #ok"></a-mixin>
 	</a-assets>
 	<a-entity id="dialog" position="0 0.6 -1" n-cockpit-parent>
 		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-entity mixin="notification-bg"></a-entity>
-		<a-entity id="ok" mixin="button closes-dialog mouseenter-button mouseleave-button">
+		<a-entity id="ok" mixin="button closes-dialog"
+			wire__enter="on: mouseenter; emit: over; target: #ok"
+			wire__leave="on: mouseleave; emit: leave; target: #ok">
 			<a-animation attribute="scale" begin="over" dur="100" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="100" from="1.1 1.1 1.1" to="1 1 1"></a-animation>
 		</a-entity>
