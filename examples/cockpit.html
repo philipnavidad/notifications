@@ -59,11 +59,11 @@
 		</a-entity>			  
 	</a-entity>
 	<a-entity id="cockpit-notification" mixin="cockpit dialog-toggle"
-		wire__over="on: mouseenter; emit: over;"
-		wire__leave="on: mouseleave; emit: leave;">
+		wire__over="on: mouseenter; emit: over; target: cockpit-notification;"
+		wire__leave="on: mouseleave; emit: leave; target: cockpit-notification;">
 		<a-animation attribute="scale" begin="over" dur="100" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
 		<a-animation attribute="scale" begin="leave" dur="100" from="1.1 1.1 1.1" to="1 1 1"></a-animation>
-		<a-animation attribute="scale" begin="close" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
+		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 	</a-entity>
 	<a-entity id="notification-sound" 
 		geometry="primitive: plane; width: 0.1; height: 0.1" material="transparent: true;"
