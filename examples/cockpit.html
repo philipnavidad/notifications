@@ -18,7 +18,7 @@
 			geometry="primitive: plane; width: 1; height: 0.8" material="transparent: true; src: #message"
 			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="closes-dialog"
-			wire="on: click; emit: close-dialog; targets: #dialog, #cockpit-notification"></a-mixin>
+			wire="on: click; emit: close-dialog; targets: #dialog"></a-mixin>
 		<a-mixin id="button"
 			geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.25 0.001"
 			material="transparent: true; src: #ok-button"
@@ -59,11 +59,12 @@
 		</a-entity>			  
 	</a-entity>
 	<a-entity id="cockpit-notification" mixin="cockpit dialog-toggle"
+	  	wire__close="on: click; emit: close; target: cockpit-notification;"
 		wire__over="on: mouseenter; emit: over; target: cockpit-notification;"
 		wire__leave="on: mouseleave; emit: leave; target: cockpit-notification;">
 		<a-animation attribute="scale" begin="over" dur="100" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
 		<a-animation attribute="scale" begin="leave" dur="100" from="1.1 1.1 1.1" to="1 1 1"></a-animation>
-		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
+		<a-animation attribute="scale" begin="close" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 	</a-entity>
 	<a-entity id="notification-sound" 
 		geometry="primitive: plane; width: 0.1; height: 0.1" material="transparent: true;"
