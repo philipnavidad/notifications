@@ -58,18 +58,20 @@
 			<a-animation attribute="scale" begin="leave" dur="1" from="0.05 0.05 0.05" to="0.0001 0.0001 0.0001"></a-animation>
 		</a-entity>			  
 	</a-entity>
-	<a-entity id="cockpit-notification" mixin="cockpit"
+	<a-entity id="cockpit-notification" mixin="cockpit" scale="0.0001 0.0001 0.0001"
 	  	wire="on: click; emit: toggle-dialog; targets: #dialog;"
 		wire__over="on: mouseenter; emit: cockpit-over; target: cockpit-notification;"
 		wire__leave="on: mouseleave; emit: cockpit-leave; target: cockpit-notification;">
+		<a-animation attribute="scale" delay="10000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1"></a-animation>
 		<a-animation attribute="scale" begin="cockpit-over" dur="100" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
 		<a-animation attribute="scale" begin="cockpit-leave" dur="100" from="1.1 1.1 1.1" to="1 1 1"></a-animation>
 		<a-animation attribute="scale" begin="remove-cockpit" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 	</a-entity>
 	<a-entity id="notification-sound" 
 		geometry="primitive: plane; width: 0.1; height: 0.1" material="transparent: true;"
-	  	n-sound="src: images/notify.wav; on: animationend; autoplay: true"
+	  	n-sound="src: images/notify.wav; on: animationend;"
 		n-skeleton-parent="part: head;">
+		<a-animation attribute="scale" delay="10000" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1"></a-animation>
 	</a-entity>
 </a-scene>
 </body>
