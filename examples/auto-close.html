@@ -7,8 +7,8 @@
 <body>
 <a-scene altspace="fullspace: true">
 	<a-assets>
-		<img id="message" src="empath.png">
-		<img id="ok-button" src="ok-button.png">
+		<img id="message" src="images/empath.png">
+		<img id="ok-button" src="images/ok-button.png">
 	 	<a-mixin id="notification-bg"
 	     		geometry="primitive: plane; width: 1; height: 0.8" material="transparent: true; src: #message"
 	    		n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
@@ -21,7 +21,7 @@
 	</a-assets>
 	<a-entity id="dialog" position="0 0.6 -1" n-cockpit-parent>
 		<a-animation attribute="scale" delay="15000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
-    <a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
+    		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-entity mixin="notification-bg"></a-entity>
 		<a-entity id="ok" mixin="button closes-dialog"
 			wire__enter="on: mouseenter; emit: over; target: #ok"
