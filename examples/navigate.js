@@ -1,4 +1,3 @@
-
 AFRAME.registerComponent('navigate', {
   schema: {
     on: {type: 'string', default: 'click'},
