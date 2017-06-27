@@ -36,10 +36,6 @@
 			geometry="primitive: plane; width: 0.4; height: 0.1" 
 		    	material="transparent: true; src: #cockpit-button"
 		 	n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
-	 	<a-mixin id="dialog-toggle"
-		  	wire="on: click; emit: toggle-dialog; targets: #dialog;"></a-mixin>
-		<a-mixin id="remove-cockpit-button"
-		  	wire__remove="on: click; emit: remove-cockpit; targets: #cockpit-notification;"></a-mixin>
 	</a-assets>
 	<a-entity id="dialog" position="0 0.6 -1" scale="0.0001 0.0001 0.0001" n-cockpit-parent>
 		<a-animation attribute="scale" begin="toggle-dialog" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" direction="alternate"></a-animation>
