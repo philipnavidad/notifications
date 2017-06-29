@@ -6,7 +6,7 @@
 <script src="scripts/navigate.js"></script>
 </head>
 <body>
-<a id="weblink" style="display: none;" href="https://www.nbcnews.com/mach"></a>
+<a id="altlink" style="display: none;" href="altspace://account.altvr.com/api/events/711608235538252167"></a>
 <a-scene altspace="fullspace: true">
 	<a-assets>
 		<img id="message" src="examples/images/notification-event-ending.png">
@@ -42,7 +42,7 @@
 		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-entity mixin="notification-bg"></a-entity>
 		<a-entity id="ok" mixin="button closes-dialog"
-			navigate="link: #weblink"
+			navigate="link: #altlink"
 		  	wire__remove="on: click; emit: remove-cockpit; target: #cockpit-notification;"
 		  	wire__enter="on: mouseenter; emit: over; target: #ok"
 			wire__leave="on: mouseleave; emit: leave; target: #ok">
