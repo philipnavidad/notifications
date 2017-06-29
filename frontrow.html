@@ -9,6 +9,8 @@
 	<a-assets>
 		<img id="message" src="examples/images/notification-frontrow.png">
 		<img id="ok-button" src="examples/images/ok.png">
+		<img id="close-icon" src="examples/images/icon-close.png">
+		<img id="close-hover-icon" src="examples/images/close-hover.png">
 	 	<a-mixin id="notification-bg"
 	     		geometry="primitive: plane; width: 1.2; height: 0.9" material="transparent: true; src: #message"
 	    		n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
@@ -18,6 +20,14 @@
 	    		geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.25 0.001"
 			material="transparent: true; src: #ok-button"
 			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
+		<a-mixin id="close"
+                        geometry="primitive: circle" material="transparent: true; src: #close-icon"
+                        scale="0.05 0.05 0.05" position="0 -0.45 0"
+                        n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
+                <a-mixin id="close2"
+                        geometry="primitive: circle" material="transparent: true; src: #close-hover-icon"
+                        scale="0.0001 0.0001 0.0001" position="0 -0.45 -0.001"
+                        n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 	</a-assets>
 	<a-entity id="dialog" position="0 0.6 -1" n-cockpit-parent>
 		<a-animation attribute="scale" delay="15000" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
@@ -28,6 +38,13 @@
 			wire__leave="on: mouseleave; emit: leave; target: #ok">
 			<a-animation attribute="scale" begin="over" dur="100" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="100" from="1.1 1.1 1.1" to="1 1 1"></a-animation>
+		</a-entity>
+		<a-entity mixin="close closes-dialog"
+                        wire__over="on: mouseenter; emit: over; target: #close-hover;"
+			wire__leave="on: mouseleave; emit: leave; target: #close-hover;"></a-entity>
+		<a-entity id="close-hover" mixin="close2">
+			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="0.05 0.05 0.05"></a-animation>
+			<a-animation attribute="scale" begin="leave" dur="1" from="0.05 0.05 0.05" to="0.0001 0.0001 0.0001"></a-animation>
 		</a-entity>
 	</a-entity>
 </a-scene>
