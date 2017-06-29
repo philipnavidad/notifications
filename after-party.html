@@ -59,8 +59,8 @@
 	<a-entity id="cockpit-notification" mixin="cockpit"
 	  	wire="on: click; emit: toggle-dialog; targets: #dialog;"
 	  	wire__remove="on: click; emit: remove-cockpit; targets: #cockpit-notification;"
-		wire__over="on: mouseenter; emit: cockpit-over; target: cockpit-notification;"
-		wire__leave="on: mouseleave; emit: cockpit-leave; target: cockpit-notification;">
+		wire__over="on: mouseenter; emit: cockpit-over; target: #cockpit-notification;"
+		wire__leave="on: mouseleave; emit: cockpit-leave; target: #cockpit-notification;">
 		<a-animation attribute="scale" begin="cockpit-over" dur="100" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
 		<a-animation attribute="scale" begin="cockpit-leave" dur="100" from="1.1 1.1 1.1" to="1 1 1"></a-animation>
 		<a-animation attribute="scale" begin="remove-cockpit" dur="1" from="1.1 1.1 1.1" to="0.0001 0.0001 0.0001"></a-animation>
