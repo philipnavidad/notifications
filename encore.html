@@ -8,7 +8,6 @@
 <a-scene altspace="fullspace: true">
 	<a-assets>
 		<img id="message" src="examples/images/notification-encore.png">
-		<img id="ok-button" src="examples/images/btn-OK.png">
 		<img id="close-icon" src="examples/images/icon-close.png">
 		<img id="close-hover-icon" src="examples/images/close-hover.png">
 	 	<a-mixin id="notification-bg"
@@ -16,10 +15,6 @@
 	    		n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="closes-dialog"
 	   		wire="on: click; emit: close-dialog; targets: #dialog"></a-mixin>
-		<a-mixin id="button"
-	    		geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.25 0.001"
-			material="transparent: true; src: #ok-button"
-			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 		<a-mixin id="close"
                         geometry="primitive: circle" material="transparent: true; src: #close-icon"
                         scale="0.05 0.05 0.05" position="0 -0.3 0"
