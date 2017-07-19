@@ -3,16 +3,16 @@
 <head>
 <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.4.2/dist/altspace.min.js"></script>
-<script src="files/navigate.js"></script>
+<script src="examples/scripts/navigate.js"></script>
 </head>
 <body>
 <a id="altlink" style="display: none;" href="altspace://account.altvr.com/api/events/707419795225575519"></a>
 <a-scene altspace="fullspace: true">
 	<a-assets>
-		<img id="message" src="files/med-notification-ESPN-eventstart.png">
-		<img id="ok-button" src="files/GO-NOW.png">
-		<img id="close-icon" src="files/icon-close.png">
-		<img id="close-hover-icon" src="files/close-hover.png">
+		<img id="message" src="examples/images/med-notification-ESPN-eventstart.png">
+		<img id="ok-button" src="examples/images/GO-NOW.png">
+		<img id="close-icon" src="examples/images/icon-close.png">
+		<img id="close-hover-icon" src="examples/images/close-hover.png">
 	 	<a-mixin id="notification-bg"
 	     		geometry="primitive: plane; width: 1.2; height: 0.9" material="transparent: true; src: #message"
 	    		n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
