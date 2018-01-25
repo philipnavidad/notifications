@@ -23,6 +23,7 @@
 			geometry="primitive: plane; width: 0.4; height: 0.1;" position="0 -0.25 0.001"
 			material="transparent: true; src: #ok-button"
 			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
+		<!--
 		<a-mixin id="close"
 			geometry="primitive: circle" material="transparent: true; src: #close-icon"
 			scale="0.05 0.05 0.05" position="0 -0.45 0"
@@ -31,6 +32,7 @@
 			geometry="primitive: circle" material="transparent: true; src: #close-hover-icon"
 			scale="0.0001 0.0001 0.0001" position="0 -0.45 -0.001"
 			n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
+		-->
 		<a-mixin id="cockpit"
 	    		position="0.6 -0.15 -0.8" rotation="-30 0 0" 
 			geometry="primitive: plane; width: 0.4; height: 0.1" 
@@ -49,6 +51,7 @@
 			<a-animation attribute="scale" begin="over" dur="100" from="1 1 1" to="1.1 1.1 1.1"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="100" from="1.1 1.1 1.1" to="1 1 1"></a-animation>
 		</a-entity>
+		<!--
 		<a-entity mixin="close closes-dialog"
 		  	wire__remove="on: click; emit: remove-cockpit; target: #cockpit-notification;"
 			wire__over="on: mouseenter; emit: over; target: #close-hover;"
@@ -56,7 +59,8 @@
 		<a-entity id="close-hover" mixin="close2">
 			<a-animation attribute="scale" begin="over" dur="1" from="0.0001 0.0001 0.0001" to="0.05 0.05 0.05"></a-animation>
 			<a-animation attribute="scale" begin="leave" dur="1" from="0.05 0.05 0.05" to="0.0001 0.0001 0.0001"></a-animation>
-		</a-entity>			  
+		</a-entity>
+		-->
 	</a-entity>
 	<a-entity id="cockpit-notification" mixin="cockpit"
 	  	wire="on: click; emit: toggle-dialog; targets: #dialog;"
