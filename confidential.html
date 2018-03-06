@@ -11,6 +11,7 @@
 		<img id="ok-button" src="examples/images/btn-OK.png">
 		<img id="close-icon" src="examples/images/icon-close.png">
 		<img id="close-hover-icon" src="examples/images/close-hover.png">
+		<img id="banner" src="examples/images/confidential-banner.png">
 	 	<a-mixin id="notification-bg"
 	     		geometry="primitive: plane; width: 1.2; height: 0.9" material="transparent: true; src: #message"
 	    		n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
@@ -46,6 +47,20 @@
 			<a-animation attribute="scale" begin="leave" dur="1" from="0.05 0.05 0.05" to="0.0001 0.0001 0.0001"></a-animation>
 		</a-entity>
 	</a-entity>
+	<a-entity geometry="primitive: plane; width: 5.65; height: 6.19" 
+		  material="transparent: true; src: #banner" 
+		  position="13.522 1.748 11.388"
+		  rotation="0 0 0"
+		  scale="1 1 1"
+	</a-entity>
+	<a-entity geometry="primitive: plane; width: 5.65; height: 6.19" 
+		  material="transparent: true; src: #banner" 
+		  position="3.696 1.748 6.977"
+		  rotation="0 0 0"
+		  scale="1 1 1"
+	</a-entity>
+	
+		  
 </a-scene>
 </body>
 </html>
