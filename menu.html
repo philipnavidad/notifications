@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.4.2/dist/altspace.min.js"></script>
+<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/AltspaceVR/AltspaceSDK/v2.8.2/dist/altspace.min.js"></script>
 <script src="examples/scripts/navigate.js"></script>
+<script>
+	AFRAME.registerComponent('if-mobile', {
+		init: function()
+		{
+			if(/Mobile/.test(navigator.userAgent)){
+				var container = document.getElementById('hidden-content');
+				var scene = document.getElementById('receiver');
+				while(container.childElementCount > 0){
+					scene.appendChild(container.children[0]);
+				}
+			}
+		}
+	});
+</script>
 </head>
 <body>
 <a id="altlink" style="display: none;" href="altspace://account.altvr.com/api/spaces/campfire-lobby"></a>
-<a-scene altspace="fullspace: true">
+<a-scene altspace="fullspace: true" if-mobile>
 	<a-assets>
 		<img id="message" src="examples/images/menu.png">
 		<img id="ok-button" src="examples/images/GO-NOW.png">
@@ -37,6 +51,9 @@
 		    	material="transparent: true; src: #cockpit-button"
 		 	n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 	</a-assets>
+	<a-entity id='receiver'></a-entity>
+</a-scene>
+<div id='hidden-content'>
 	<a-entity id="dialog" position="0 0.6 -1" scale="1 1 1" n-cockpit-parent>
 		<a-animation attribute="scale" begin="toggle-dialog" dur="1" from="0.0001 0.0001 0.0001" to="1 1 1" direction="normal"></a-animation>
 		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
@@ -69,6 +86,6 @@
 	  	n-sound="src: images/notify.wav; on: animationend; autoplay: true"
 		n-skeleton-parent="part: head;">
 	</a-entity>
-</a-scene>
+</div>
 </body>
 </html>
