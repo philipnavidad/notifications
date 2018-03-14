@@ -57,7 +57,7 @@
 			<a-animation attribute="scale" begin="leave" dur="1" from="0.05 0.05 0.05" to="0.0001 0.0001 0.0001"></a-animation>
 		</a-entity>			  
 	</a-entity>
-	<a-entity id="cockpit-notification" mixin="cockpit" scale="0.0001 0.0001 0.0001"
+	<a-entity id="cockpit-notification" mixin="cockpit"
 	  	wire="on: click; emit: toggle-dialog; targets: #dialog;"
 		wire__over="on: mouseenter; emit: cockpit-over; target: cockpit-notification;"
 		wire__leave="on: mouseleave; emit: cockpit-leave; target: cockpit-notification;">
