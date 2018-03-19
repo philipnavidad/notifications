@@ -7,6 +7,7 @@
 <body>
 <a-scene altspace="fullspace: true">
 	<a-assets>
+		<img id="sky" src="resources/sky-forest.jpg">
 		<img id="message" src="examples/images/confidential.png">
 		<img id="ok-button" src="examples/images/btn-OK.png">
 		<img id="close-icon" src="examples/images/icon-close.png">
@@ -30,6 +31,7 @@
                         scale="0.0001 0.0001 0.0001" position="0 -0.45 -0.001"
                         n-cockpit-parent altspace-cursor-collider="enabled: true"></a-mixin>
 	</a-assets>
+	<a-sky src="#sky" radius="100"></a-sky>
 	<a-entity id="dialog" position="0 0.6 -1" n-cockpit-parent>
     		<a-animation attribute="scale" begin="close-dialog" dur="1" from="1 1 1" to="0.0001 0.0001 0.0001"></a-animation>
 		<a-entity mixin="notification-bg"></a-entity>
